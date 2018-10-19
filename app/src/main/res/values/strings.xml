@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PianoPushups</string>
+    <string name="enter_text">Type something, dude</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="label_go_note1">Note practice 1</string>
+    <string name="button_go_note_type1">Go!</string>
+    <string name="notes_A">A</string>
+    <string name="notes_B">B</string>
+    <string name="notes_C">C</string>
+    <string name="notes_D">D</string>
+    <string name="notes_E">E</string>
+    <string name="notes_F">F</string>
+    <string name="notes_G">G</string>
+    <string name="notes_A_sharp">A#</string>
+    <string name="notes_A_flat">Ab</string>
+    <string name="notes_B_flat">Bb</string>
+    <string name="notes_B_sharp">B#</string>
+    <string name="notes_C_flat">Cb</string>
+    <string name="notes_C_sharp">C#</string>
+    <string name="notes_D_flat">Db</string>
+    <string name="notes_D_sharp">D#</string>
+    <string name="notes_E_flat">Eb</string>
+    <string name="notes_E_sharp">E#</string>
+    <string name="notes_F_flat">Fb</string>
+    <string name="notes_F_sharp">F#</string>
+    <string name="notes_G_flat">Gb</string>
+    <string name="notes_G_sharp">G#</string>
+    <string name="image_descrip_notes2play">Notes to play</string>
+    <string name="btn_notepractice_new">New notes</string>
+    <string name="txt_measures">Measures:</string>
+</resources>
