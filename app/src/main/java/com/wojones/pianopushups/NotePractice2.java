@@ -8,10 +8,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class NotePractice2 extends AppCompatActivity
         implements AdapterView.OnItemSelectedListener {
@@ -30,6 +32,7 @@ public class NotePractice2 extends AppCompatActivity
 
     Integer[] measures_values = new Integer[] {2, 3, 4, 5};
     Integer measures = 3;
+    private String[] note_values = new String[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,26 +43,47 @@ public class NotePractice2 extends AppCompatActivity
         spnr.setOnItemSelectedListener(this);
 
         ArrayAdapter<Integer> adptr =
-                new ArrayAdapter<Integer>(this, R.layout.support_simple_spinner_dropdown_item,
+                new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item,
                         measures_values);
         adptr.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spnr.setAdapter(adptr);
 
         spnr.setSelection(Arrays.asList(measures_values).indexOf(measures));
+        scrambleNotes();
+        applyNotes();
     }
 
     public void scrambleNotes() {
         Log.i(LOGTAG, "Scrambling!");
-        TextView tv1 = findViewById(R.id.noteOneText);
+        for (int i = 0; i < note_values.length; i++) {
+            int noteidx = new Random().nextInt(notes.length);
+            noteidx = 3 * (noteidx / 3);
+            Log.i(LOGTAG, "Note #" + i + ": " + notes[noteidx] + " (" + noteidx + ")");
+            note_values[i] = notes[noteidx];
+        }
+    }
+
+    private void applyNotes() {
+        for (int i = 0; i < note_values.length; i++) {
+            TextView tv = findViewById(getResources().getIdentifier("noteText" + (i+1), "id", getPackageName()));
+            int resid_one = getResources().getIdentifier(note_values[i], "string", getPackageName());
+            Log.i(LOGTAG, "apply" + i + ": " + note_values[i]);
+            tv.setText(resid_one);
+        }
+        //TextView tv1 = findViewById(R.id.noteText1);
         //tv1.setText(getString(R.string.notes_D_sharp));
-        int resid_one = getResources().getIdentifier(notes[2], "string", getPackageName());
-        tv1.setText(resid_one);
-        ImageView iv1 = findViewById(R.id.noteOneImg);
-        iv1.setImageResource(R.drawable.ic_launcher_background);
+        //TextView tv = findViewById(getResources().getIdentifier("noteText" + 1, "id", getPackageName()));
+
+        //int resid_one = getResources().getIdentifier(note_values[0], "string", getPackageName());
+        //tv1.setText(resid_one);
+        //tv.setText(resid_one);
+        //ImageView iv1 = findViewById(R.id.noteOneImg);
+        //iv1.setImageResource(R.drawable.ic_launcher_background);
     }
 
     public void notesButtonPressed(View vw) {
         scrambleNotes();
+        applyNotes();
     }
 
     public void setRowCount(Integer rows) {

@@ -21,8 +21,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
+            android:id="@+id/tablerow0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/button3"
@@ -55,11 +56,12 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tablerow1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/noteOneText"
+                android:id="@+id/noteText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -70,7 +72,7 @@
                 tools:layout_editor_absoluteY="81dp" />
 
             <ImageView
-                android:id="@+id/noteOneImg"
+                android:id="@+id/noteImg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/image_descrip_notes2play"
@@ -79,11 +81,12 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tablerow2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/noteTwoText"
+                android:id="@+id/noteText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -94,7 +97,7 @@
                 tools:layout_editor_absoluteY="81dp" />
 
             <ImageView
-                android:id="@+id/noteTwoImg"
+                android:id="@+id/noteImg2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/image_descrip_notes2play"
@@ -102,11 +105,12 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tablerow3"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/noteThreeText"
+                android:id="@+id/noteText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -117,7 +121,55 @@
                 tools:layout_editor_absoluteY="81dp" />
 
             <ImageView
-                android:id="@+id/noteThreeImg"
+                android:id="@+id/noteImg3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_descrip_notes2play"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tablerow4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/noteText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/notes_E_flat"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="81dp" />
+
+            <ImageView
+                android:id="@+id/noteImg4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_descrip_notes2play"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tablerow5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/noteText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/notes_E_flat"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="81dp" />
+
+            <ImageView
+                android:id="@+id/noteImg5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/image_descrip_notes2play"
