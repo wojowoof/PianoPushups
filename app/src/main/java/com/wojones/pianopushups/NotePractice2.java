@@ -113,7 +113,7 @@ public class NotePractice2 extends AppCompatActivity
             TableRow tr = findViewById(getResources().getIdentifier("tablerow" + (i + 1), "id", getPackageName()));
             if (measures <= i) {
                 Log.i(LOGTAG, "hide row " + i);
-                tr.setVisibility(View.GONE);
+                tr.setVisibility(View.INVISIBLE);
             } else {
                 tr.setVisibility(View.VISIBLE);
                 TextView tv = findViewById(getResources().getIdentifier("noteText" + (i + 1), "id", getPackageName()));
