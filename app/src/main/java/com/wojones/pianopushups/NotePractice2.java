@@ -20,6 +20,7 @@ public class NotePractice2 extends AppCompatActivity
         implements AdapterView.OnItemSelectedListener {
 
     private static final String LOGTAG = "NotePractice";
+    private static final int MAX_NOTES = 5;
 
     private static String[] notes = new String[] {
             "notes_A", "notes_A_flat", "notes_A_sharp",
@@ -42,10 +43,11 @@ public class NotePractice2 extends AppCompatActivity
     private static String[] rhythms = new String[] {
             "img_quarter_notes", "img_half_notes", "img_whole_note",
     };
+    private static int[] rhythm_values = new int[MAX_NOTES];
 
     Integer[] measures_values = new Integer[] {2, 3, 4, 5};
     Integer measures = 3;
-    private int[] note_values = new int[5];
+    private int[] note_values = new int[MAX_NOTES];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,11 @@ public class NotePractice2 extends AppCompatActivity
             } while (i > 0 && noteidx == note_values[i-1]);
             Log.i(LOGTAG, "Note #" + i + ": " + notes[noteidx] + " (" + noteidx + ")");
             note_values[i] = noteidx;
+
+            do {
+                rhythm_values[i] = new Random().nextInt(rhythms.length);
+            } while (i > 0 && rhythm_values[i] == rhythm_values[i-1]);
+            Log.i(LOGTAG, "rhythm #" + i + ": " + rhythms[rhythm_values[i]]);
         }
     }
 
@@ -122,7 +129,7 @@ public class NotePractice2 extends AppCompatActivity
                 tv.setText(resid_one);
             }
             ImageView iv = findViewById(getResources().getIdentifier("noteImg" + (i+1), "id", getPackageName()));
-            iv.setImageResource(getResources().getIdentifier(rhythms[i % rhythms.length], "drawable", getPackageName()));
+            iv.setImageResource(getResources().getIdentifier(rhythms[rhythm_values[i]], "drawable", getPackageName()));
         }
     }
 

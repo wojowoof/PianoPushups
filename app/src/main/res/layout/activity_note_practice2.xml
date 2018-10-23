@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TableLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="fill_vertical"
             android:layout_marginStart="16dp"
@@ -34,6 +34,7 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
+            android:background="@android:color/holo_purple"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +44,7 @@
                 android:id="@+id/tablerow1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="fill_horizontal"
                 android:layout_weight="20"
                 android:paddingTop="8dp">
 
@@ -56,14 +58,13 @@
                     android:gravity="center_vertical|center_horizontal|center"
                     android:text="@string/notes_B_flat"
                     android:textSize="36sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="81dp" />
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/noteImg1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
                     android:adjustViewBounds="true"
                     android:background="@android:color/holo_red_dark"
                     android:contentDescription="@string/image_descrip_notes2play"
@@ -81,7 +82,7 @@
 
                 <TextView
                     android:id="@+id/noteText2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
@@ -97,6 +98,7 @@
                     android:id="@+id/noteImg2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
                     android:adjustViewBounds="true"
                     android:background="@android:color/holo_orange_dark"
                     android:contentDescription="@string/image_descrip_notes2play"
@@ -129,6 +131,7 @@
                     android:id="@+id/noteImg3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
                     android:adjustViewBounds="true"
                     android:background="@android:color/holo_orange_light"
                     android:contentDescription="@string/image_descrip_notes2play"
@@ -161,6 +164,7 @@
                     android:id="@+id/noteImg4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
                     android:adjustViewBounds="true"
                     android:background="@android:color/holo_green_dark"
                     android:contentDescription="@string/image_descrip_notes2play"
@@ -193,19 +197,12 @@
                     android:id="@+id/noteImg5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="fill_horizontal"
                     android:adjustViewBounds="true"
                     android:background="@android:color/holo_blue_bright"
                     android:contentDescription="@string/image_descrip_notes2play"
                     android:cropToPadding="false"
                     app:srcCompat="@android:drawable/btn_star_big_on" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tablerow0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
             </TableRow>
 
         </TableLayout>
