@@ -323,16 +323,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:onClick="metronomeStartPressed"
+                    android:onClick="metronomeToggle"
                     android:text="@string/btn_metronome_start" />
 
-                <Button
-                    android:id="@+id/metroStopBtn"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="metronomeStopPressed"
-                    android:text="@string/btn_metronome_stop" />
             </LinearLayout>
 
         </LinearLayout>

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -43,6 +44,7 @@ public class NotePractice2 extends AppCompatActivity
     };
     private static String[] rhythms = new String[] {
             "img_quarter_notes", "img_half_notes", "img_whole_note",
+            "img_qqqrq_notes", "img_qqeeq_notes", "img_qqh_notes",
     };
     private static int[] rhythm_values = new int[MAX_NOTES];
 
@@ -100,6 +102,9 @@ public class NotePractice2 extends AppCompatActivity
         });
         skbr.setProgress(90);
         tktk.setBPM(90);
+
+        Button btn = findViewById(R.id.metroStartBtn);
+        btn.setText(R.string.btn_metronome_start);
 
         scrambleNotes();
         applyNotes();
@@ -170,6 +175,19 @@ public class NotePractice2 extends AppCompatActivity
     public void metronomeStopPressed(View vw) {
         Log.i(LOGTAG, "Metronome: Halt!");
         tktk.stop();
+    }
+
+    public void metronomeToggle(View vw) {
+        Button btn = findViewById(R.id.metroStartBtn);
+        if (tktk.running()) {
+            Log.i(LOGTAG, "Toggle: stop metronome");
+            tktk.stop();
+            btn.setText(R.string.btn_metronome_start);
+        } else {
+            Log.i(LOGTAG, "Toggle: start metronome");
+            tktk.start(NotePractice2.this);
+            btn.setText(R.string.btn_metronome_stop);
+        }
     }
 
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromuser) {
