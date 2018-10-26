@@ -30,4 +30,7 @@
     <string name="txt_measures">Measures:</string>
     <string name="chk_naturals">Only naturals</string>
     <string name="chk_complex">Allow complex accidentals</string>
+    <string name="btn_metronome_start">Start!</string>
+    <string name="metronome_title">TickTock:</string>
+    <string name="btn_metronome_stop">Stop!</string>
 </resources>

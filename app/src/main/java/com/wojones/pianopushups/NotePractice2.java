@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -48,6 +49,7 @@ public class NotePractice2 extends AppCompatActivity
     Integer[] measures_values = new Integer[] {2, 3, 4, 5};
     Integer measures = 3;
     private int[] note_values = new int[MAX_NOTES];
+    private TickTock tktk = new TickTock();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class NotePractice2 extends AppCompatActivity
         spnr.setAdapter(adptr);
 
         spnr.setSelection(Arrays.asList(measures_values).indexOf(measures));
+
         // TODO: remember setting in user defaults or something
         CheckBox cbx = findViewById(R.id.chkNaturals);
         cbx.setChecked(true);
@@ -77,6 +80,27 @@ public class NotePractice2 extends AppCompatActivity
                     cplxbox.setEnabled(!isChecked);
             }
         });
+
+        SeekBar skbr = findViewById(R.id.metronomeBPM);
+        skbr.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                NotePractice2.this.onProgressChanged(seekBar, progress, fromUser);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        skbr.setProgress(90);
+        tktk.setBPM(90);
+
         scrambleNotes();
         applyNotes();
     }
@@ -136,6 +160,23 @@ public class NotePractice2 extends AppCompatActivity
     public void notesButtonPressed(View vw) {
         scrambleNotes();
         applyNotes();
+    }
+
+    public void metronomeStartPressed(View vw) {
+        Log.i(LOGTAG, "Metronome: Start!");
+        tktk.start(NotePractice2.this);
+    }
+
+    public void metronomeStopPressed(View vw) {
+        Log.i(LOGTAG, "Metronome: Halt!");
+        tktk.stop();
+    }
+
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromuser) {
+        Log.i(LOGTAG, "BPM: " + progress);
+        TextView tv = findViewById(R.id.BPMText);
+        tv.setText(Integer.toString(progress));
+        tktk.setBPM(progress);
     }
 
     public void setRowCount(Integer rows) {
