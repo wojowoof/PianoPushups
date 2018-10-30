@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotRhythmPractice(View vw) {
+        Intent intent = new Intent(this, RhythmPractice.class);
+        startActivity(intent);
+    }
 
     public void goNotePractice2(View vw) {
         Intent intent = new Intent(this, NotePractice2.class);
