@@ -45,6 +45,9 @@ public class NotePractice2 extends AppCompatActivity
     private static String[] rhythms = new String[] {
             "img_quarter_notes", "img_half_notes", "img_whole_note",
             "img_qqqrq_notes", "img_qqeeq_notes", "img_qqh_notes",
+            "img_hqq_notes",
+            "img_qqrqqr_notes", "img_qqqqr_notes", "img_qrqqrq_notes",
+            "img_qqrqq_notes", "img_qqrqrq_notes",
     };
     private static int[] rhythm_values = new int[MAX_NOTES];
 

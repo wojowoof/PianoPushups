@@ -63,8 +63,9 @@ public class RhythmPractice extends AppCompatActivity {
     private void addChildMeasureView(String measureImage) {
         LinearLayout ll = findViewById(R.id.MeasuresLL);
         ImageView iv = new ImageView(this);
+        iv.setAdjustViewBounds(true);
         iv.setImageResource(getResources().getIdentifier(measureImage, "drawable", getPackageName()));
-        LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(0, WRAP_CONTENT);
+        LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(0, MATCH_PARENT);
         lllp.weight = smallWeight;
 
         ll.addView(iv, lllp);
